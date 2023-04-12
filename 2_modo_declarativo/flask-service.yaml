@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service
+spec:
+  selector: #esse é o link para exposição
+    app: flask-app #  entre o service e o deployment
+  ports:
+    - protocol: 'TCP' #lista
+      port: 5000
+      targetPort: 5000
+  type: LoadBalancer
